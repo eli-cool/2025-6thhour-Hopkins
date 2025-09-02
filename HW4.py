@@ -10,7 +10,7 @@ lis=["scout","soldier","pyro","heavy","demo"]
 #2. Append a new name onto the Name List.
 lis.append("engineer")
 #3. Print out the 4th name on the list.
-print(lis)
+print(lis[3])
 #4. Create a list with 4 different integers in it.
 numlis=[4,5,6,7]
 #5. Insert a new integer into the 2nd spot and print the new list.
