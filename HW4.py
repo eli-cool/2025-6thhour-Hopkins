@@ -24,5 +24,4 @@ print(sum(newnumlis))
 #8. Create a list with two strings, two variables, and too boolean values.
 multi=[6,7,"sniper","medic",True,False]
 #9. Create a print statement that asks the user to input their own index value for the list on #8.
-multi.append(input("whats the next value? "))
-print(multi)
+print(multi[int(input())])
