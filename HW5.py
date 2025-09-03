@@ -16,7 +16,10 @@ emp.append(numlis.pop(0))
 print(numlis)
 print(emp)
 #7. Add the two numbers in the second list together and print the result.
-
+som=sum(emp)
+print(som)
 #8. Move the number back to the first list (like you did in #4 and #5 but reversed).
-
+numlis.append(som)
 #9. Sort the first list from lowest to highest and print it.
+numlis.sort()
+print(numlis)
