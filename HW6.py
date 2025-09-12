@@ -35,6 +35,7 @@ lishigh = sum(fourlist[-3:])
 print(lishigh)
 #10. Create a list with 5 names of other students in this class and print the list.
 names = ["eli","ally","alaya","brodie", "devon"]
+print(names)
 #11. Shuffle the list in #10 and print the list again.
 shuffle(names)
 print(names)
