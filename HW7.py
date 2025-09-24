@@ -46,5 +46,6 @@ classroom= {
 
 }
 #9. Print the names of all three classmates on the same line.
-
+print(classroom["student1"]["name"],classroom["student3"]["name"],classroom["student2"]["name"])
 #10. Use the pop function to remove one of the nested dictionaries inside and print the full dictionary from #8.
+classroom.pop("student1")
