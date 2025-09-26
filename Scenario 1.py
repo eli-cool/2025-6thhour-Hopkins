@@ -12,27 +12,28 @@
 chars = {
     "enemy1": {
         "name":"pitbull named princess",
-        "DMG":4,
-        "HP":6,
+        "DMG":10,
+        "HP":10,
         "AC":3,
     },
     "enemy2": {
-        "name":"pitbull named princess",
-        "DMG":4,
-        "HP":6,
+        "name":"rodent",
+        "DMG":5,
+        "HP":24,
         "AC":3,
     },
     "enemy3": {
         "name":"Ally",
         "DMG":17,
         "HP":2007,
-        "AC":"5",
+        "AC":5,
     },
     "enemy4": {
         "name":"the sun",
         "DMG":2000,
         "HP":25,
         "AC":0,
+        #take it out as fast as you can
     },
     "enemy5": {
         "name":"skeleton zombie vampire",
@@ -42,5 +43,10 @@ chars = {
         #it's just a dead guy
     }
 }
-
+chars["enemy1"]["DMG"] = input("enemy 1's damage: ")
+chars["enemy2"]["DMG"] = input("enemy 2's damage: ")
+chars["enemy3"]["DMG"] = input("enemy 3's damage: ")
+chars["enemy4"]["DMG"] = input("enemy 4's damage: ")
+chars["enemy5"]["DMG"] = input("enemy 5's damage: ")
+print(chars)
 #It is up to you to decide what properties are important and the theme of the game.
