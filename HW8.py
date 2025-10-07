@@ -10,6 +10,7 @@ a= random.randint(1,10)
 b=random.randint(1,10)
 c=random.randint(1,10)
 lisabc = [a,b,c]
+lisabcsum = sum(lisabc)
 #3. Print A, B, and C on the same line.
 print(lisabc)
 #4. Make an if statement that prints if variable A is greater than, less than, or equal to 5.
@@ -30,9 +31,9 @@ else:
 #7. Create a variable whose value is 3 + a randomly generated number between 1 and 20
 threeval = random.randint(1,20) + 3
 #8. Make an if statement that prints if the variable from #7 is greater than, less than, or equal to A + B + C.
-if threeval > lisabc:
+if threeval > lisabcsum:
     print("threeval is greater than lisabc")
-elif threeval < lisabc:
+elif threeval < lisabcsum:
     print("threeval is less than lisabc")
-    else:
+else:
     print("threeval is equal to lisabc")
