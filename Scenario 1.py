@@ -43,10 +43,10 @@ chars = {
         #it's just a dead guy
     }
 }
-chars["enemy1"]["DMG"] = input("enemy 1's damage: ")
-chars["enemy2"]["DMG"] = input("enemy 2's damage: ")
-chars["enemy3"]["DMG"] = input("enemy 3's damage: ")
-chars["enemy4"]["DMG"] = input("enemy 4's damage: ")
-chars["enemy5"]["DMG"] = input("enemy 5's damage: ")
+chars["enemy1"].update({dmg:"int(input("enemy 1's damage: ")})
+chars["enemy2"]["DMG"] = int(input("enemy 2's damage: "))
+chars["enemy3"]["DMG"] = int(input("enemy 3's damage: "))
+chars["enemy4"]["DMG"] = int(input("enemy 4's damage: "))
+chars["enemy5"]["DMG"] = int(input("enemy 5's damage: "))
 print(chars)
 #It is up to you to decide what properties are important and the theme of the game.
