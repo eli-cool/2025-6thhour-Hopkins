@@ -7,10 +7,7 @@
 print("Hello World!")
 #2. Create a list with three variables that each randomly generate a number between 1 and 100
 import random
-a = random.randint(1, 100)
-b = random.randint(1, 100)
-c = random.randint(1, 100)
-varlis = [a, b, c]
+varlis = [random.randint(1, 100), random.randint(1, 100), random.randint(1, 100)]
 #3. Print the list.
 print(varlis)
 #4. Create an if statement that determines which of the three numbers is the highest and prints the result.
