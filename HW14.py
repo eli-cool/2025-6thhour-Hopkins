@@ -9,7 +9,7 @@ x = 5
 for i in range(1,5+1):
     print(x)
     x -= 1
-    #time.sleep(1)
+    time.sleep(1)
 print("hellow world")
 #2. Create a for loop that counts up and prints only even numbers between 1 and 30.
 for i in range(1,30+1):
