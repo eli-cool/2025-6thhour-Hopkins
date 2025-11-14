@@ -5,7 +5,7 @@
 import time
 #1. Create a for loop with variable i that counts down from 5 to 1 and then prints "Hello World!"
 #at the end.
-"""x = 5
+x = 5
 for i in range(1,5+1):
     print(x)
     x -= 1
@@ -45,7 +45,7 @@ for i int in ints_new:
     if i % 2 == 0:
         evenNumbers += 1
     else:
-        oddNumbers += 1"""
+        oddNumbers += 1
 #9. Create a variable that asks the user for an integer and an empty integer variable.
 asked = int(input("put a number here: "))
 empty = 1
