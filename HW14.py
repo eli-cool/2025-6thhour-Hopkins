@@ -34,18 +34,19 @@ for i in str(input("put a word here: "))[::-1]:
 #    ints.append(int(input("enter number: ")))
 #    print(i,"out of 10 made")
 #print(ints)
-ints_new = [10,10,9,6,5,7,3,6,1,2]
+ints_new = [6,7,6,7,6,7,6,7,6,7,6,7,7]
 print(ints_new)
 #7. Create two empty variables named evenNumbers and oddNumbers.
-evenNumbers = ()
-oddNumbers = ()
+evenNumbers = 0
+oddNumbers = 0
 #8. Make a loop that counts the number of even and odd numbers in the list, and prints the
 #result after the loop.
-for i int in ints_new:
+for i in ints_new:
     if i % 2 == 0:
         evenNumbers += 1
     else:
         oddNumbers += 1
+print("even numbers:",evenNumbers,"odd numbers:", oddNumbers)
 #9. Create a variable that asks the user for an integer and an empty integer variable.
 asked = int(input("put a number here: "))
 empty = 1
