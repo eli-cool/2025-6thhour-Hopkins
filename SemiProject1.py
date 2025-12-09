@@ -87,6 +87,11 @@ enemyDict = {
 #20-sided die (d20) and adding their initiative modifier (If the roll is the same,
 #assume the hero goes first).
 
+def attack(attacker, atmod):
+    roll_attack = random.randint(0,20)
+    attack_final = roll_attack + atmod
+    print("the", attacker, "would deal", attack_final, "damage")
+
 hero = random.choice(list(partyDict.keys()))
 villain = random.choice(list(enemyDict.keys()))
 
@@ -95,7 +100,7 @@ print(hero, "is fighting the", villain)
 roll_initiative_h = random.randint(0,20)
 roll_initiative_v = random.randint(0,20)
 if roll_initiative_h >= roll_initiative_v:
-    attack(hero)
+    attack(hero,partyDict[hero.AtkMod])
     print("the hero is attacking")
 else:
     print("the enemy is attacking")
@@ -107,10 +112,7 @@ else:
 #the character deals double damage. If the d20 rolled to attack is an unmodified ("natural") 1,
 #the attack automatically misses
 
-def attack(attacker, atmod):
-    roll_attack = random.randint(0,20)
-    attack_final = roll_attack + atmod
-    print("the", attacker, "would deal", attack_final, "damage")
+
 
 
 #3. If the attack hits, roll damage and subtract it from the target's hit points.
