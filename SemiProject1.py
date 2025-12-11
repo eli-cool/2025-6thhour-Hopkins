@@ -4,7 +4,7 @@
 
 import random
 import time
-print("git blame Ethan")
+
 #Due to weird time travelling circumstances beyond explanation, you find yourself in 2018 or so
 #working for Larian Studios. Currently, they are working on the early prototypes of the hype
 #upcoming game "Baldur's Gate 3". BG3 is a game that uses the Dungeons & Dragons 5th edition rules
