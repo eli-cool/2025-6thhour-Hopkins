@@ -87,27 +87,43 @@ enemyDict = {
 #20-sided die (d20) and adding their initiative modifier (If the roll is the same,
 #assume the hero goes first).
 
-def attack(attacker, atmod):
-    roll_attack = random.randint(0,20)
-    attack_final = roll_attack + atmod
-    print("the", attacker, "would deal", attack_final, "damage")
-
 hero = random.choice(list(partyDict.keys()))
 villain = random.choice(list(enemyDict.keys()))
+
+attacker_party
+
+def attack(attacker, atmod, victim):
+    for i in partyDict:
+        if i == attacker:
+            attacker_party += partyDict[i]
+
+    if not attacker_party:
+
+
+    print(attacker_party)
+    roll_attack = random.randint(0,20)
+    attack_final = roll_attack + atmod
+    if attack_final < victim["AC"]:
+        print("swing and a miss")
+        print(attacker, attack_final, victim, victim["AC"],"defence")
+    else:
+        print("the", attacker, "would deal", attack_final, "damage")
 
 print(hero, "is fighting the", villain)
 
 roll_initiative_h = random.randint(0,20)
 roll_initiative_v = random.randint(0,20)
 if roll_initiative_h >= roll_initiative_v:
-    attack(hero,partyDict[hero.AtkMod])
     print("the hero is attacking")
+    attack(hero,partyDict[hero]["AtkMod"],enemyDict[villain])
 else:
     print("the enemy is attacking")
+    attack(villain,enemyDict[villain]["AtkMod"],partyDict[hero])
 
 
 #2. Rolling to attack. This is determined by rolling a 20-sided die (d20) and adding their
 #attack modifier. The attack hits if it matches or is higher than the target's Armor Class (AC).
+
 #If the d20 rolled to attack is an unmodified ("natural") 20, the attack automatically hits and
 #the character deals double damage. If the d20 rolled to attack is an unmodified ("natural") 1,
 #the attack automatically misses
@@ -120,3 +136,4 @@ else:
 #4. The second in initiative rolls to attack (and rolls damage) afterwards.
 
 #5. Repeat steps 2-5 until one of the characters is dead.
+
