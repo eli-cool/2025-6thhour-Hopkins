@@ -90,35 +90,51 @@ enemyDict = {
 hero = random.choice(list(partyDict.keys()))
 villain = random.choice(list(enemyDict.keys()))
 
-attacker_party
-
-def attack(attacker, atmod, victim):
-    for i in partyDict:
-        if i == attacker:
-            attacker_party += partyDict[i]
-
-    if not attacker_party:
-
-
-    print(attacker_party)
+def attack(attacker_stats,attacker, atmod, victim,victim_stats):
+    time.sleep(1)
     roll_attack = random.randint(0,20)
     attack_final = roll_attack + atmod
-    if attack_final < victim["AC"]:
+    print(attacker, "swings for", attack_final, victim, "dodges for", victim_stats["AC"])
+    time.sleep(1)
+    if attack_final < victim_stats["AC"]:
         print("swing and a miss")
-        print(attacker, attack_final, victim, victim["AC"],"defence")
+        print(victim,"is now attacking",attacker)
+        time.sleep(3)
+        attack(victim_stats, victim, victim_stats["AtkMod"], attacker, attacker_stats)
     else:
-        print("the", attacker, "would deal", attack_final, "damage")
+        print("swing and a homerun!!")
+        damage(attacker_stats,attacker, attacker_stats["Damage"], victim, victim_stats)
+
+#DAMAGE HIT KILLIG PEOPLE DIE DIE DIE
+def damage(attacker_stats,attacker, damage, victim, victim_stats):
+    time.sleep(1)
+    victim_stats["HP"] -= damage
+    print(attacker,"deals",damage,"to",victim)
+    print(victim,"now has",victim_stats["HP"],"hp")
+    if victim_stats["HP"] <= 0:
+        print(victim,"has",victim_stats["HP"],"hp","and dies")
+        print(attacker,"wins with",attacker_stats["HP"],"hp")
+    else:
+        print(victim,"is now attacking",attacker)
+        time.sleep(3)
+        attack(victim_stats,victim, victim_stats["AtkMod"], attacker, attacker_stats)
+
+
+
+
+
+
 
 print(hero, "is fighting the", villain)
-
-roll_initiative_h = random.randint(0,20)
-roll_initiative_v = random.randint(0,20)
+time.sleep(1)
+roll_initiative_h = random.randint(1,20)
+roll_initiative_v = random.randint(1,20)
 if roll_initiative_h >= roll_initiative_v:
     print("the hero is attacking")
-    attack(hero,partyDict[hero]["AtkMod"],enemyDict[villain])
+    attack(partyDict[hero],hero,partyDict[hero]["AtkMod"],villain,enemyDict[villain])
 else:
     print("the enemy is attacking")
-    attack(villain,enemyDict[villain]["AtkMod"],partyDict[hero])
+    attack(enemyDict[villain],villain,enemyDict[villain]["AtkMod"],hero,partyDict[hero])
 
 
 #2. Rolling to attack. This is determined by rolling a 20-sided die (d20) and adding their
