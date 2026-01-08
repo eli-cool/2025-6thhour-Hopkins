@@ -4,7 +4,6 @@
 
 #1. import the "random" library
 import random
-import math
 #2. print "Hello World!"
 print("hi")
 #3. Create three variables named a, b, and c, and allow the user to input an integer for each.
@@ -14,7 +13,12 @@ c = int(input("enter number 3"))
 #4. Add a and b together, then divide the sum by c. Print the result.
 d = (a + b) / c
 #5. Round the result from #3 up or down, and then determine if it is even or odd.
-d = math.ceil(d)
+d = round(d)
+if d % 2 == 0:
+    print("even")
+else:
+    print("odd")
+
 #6. Create a list of five different random integers between 1 and 10.
 lis = [random.randint(1,10),random.randint(1,10),random.randint(1,10),random.randint(1,10),random.randint(1,10),]
 #7. Print the 4th number in the list.
@@ -25,10 +29,10 @@ lis.append(random.randint(1,10))
 lis.sort()
 print(lis[3])
 #10. Create a while loop that starts at 1, prints i and then adds i to itself until it is greater than 100.
-i = 1
-while i <= 100:
-    print(i)
-    i += i
+h = 1
+while h < 100:
+    print(h)
+    h *= 2
 #11. Create a list containing the names of five other students in the classroom.
 names = ["Ally","Alaya","GREG","Conor","Ethan"]
 #12. Create a for loop that individually prints out the names of each student in the list.
@@ -36,8 +40,11 @@ for i in names:
     print(i)
 #13. Create a for loop that counts from 1 to 100, but ends early if the number is a multiple of 10.
 m = 1
-while m / 10 != 0:
+for m in range(1,100):
     print(m)
     m += 1
+    if m % 10 == 0:
+        print("hi")
+        break
 #14. Free space. Do something creative. :)
 #i have a game to make
