@@ -1,6 +1,8 @@
 #Name: Eli Hopkins
 #Class: 6th Hour
 #Assignment: HW17
+import random
+
 
 #1. Create a def function that plays a single round of rock, paper, scissors where the user inputs
 #1 for rock, 2 for paper, or 3 for scissors and compares it to a random number generated to serve
@@ -8,7 +10,9 @@
 
 #2. Create a def function that prompts the user to input if they want to play another round, and
 #repeats the RPS def function if they do or exits the code if they don't.
-
+option = ""
+enemy = ""
+wratio = 0
 def rps_choice():
     global option
     print("say which one you choose:")
@@ -41,10 +45,61 @@ def rps_choice():
             or confirm == "heck bet" or confirm == "heck you bet"
     ):
         rps_enemy()
+        rps_battle()
     else:
         rps_choice()
 
-rps_choice()
+
 
 def rps_enemy():
 #enemy set up
+    global enemy
+    enemy = random.choice(["rock", "paper", "scissors"])
+    print("battle!")
+
+
+def rps_battle():
+    global wratio
+    if option == "rock":
+        if enemy == "rock":
+            print("You tied!")
+        if enemy == "paper":
+            print("You lost!")
+            wratio -= 1
+        if enemy == "scissors":
+            print("You win!")
+            wratio += 1
+
+
+    elif option == "paper":
+        if enemy == "rock":
+            print("You win!")
+            wratio += 1
+        if enemy == "paper":
+            print("You tie!")
+        if enemy == "scissors":
+            print("You lost!")
+            wratio -= 1
+
+
+    elif option == "scissors":
+        if enemy == "rock":
+            print("You lost!")
+            wratio -= 1
+        if enemy == "paper":
+            print("You win!")
+            wratio += 1
+        if enemy == "scissors":
+            print("You tie!")
+    print("the enemy was",enemy)
+    print("win to lose ratio: ", wratio)
+    rps_retry()
+
+def rps_retry():
+    askret = input("Do you want to retry again? ")
+    askret = askret.lower()
+    if (askret == "yes" or askret == "y"):
+        rps_choice()
+
+
+rps_choice()
